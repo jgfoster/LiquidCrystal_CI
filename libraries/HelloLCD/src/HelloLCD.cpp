@@ -1,7 +1,10 @@
-// modeled on https://github.com/jgfoster/Blink
+// from https://github.com/jgfoster/LiquidCrystal_CI
 
 #include <Arduino.h>
 #include "HelloLCD.h"
+
+// uncomment this line to use the test class always
+// #define MOCK_PINS_COUNT 256
 
 #ifdef MOCK_PINS_COUNT
 #define COLS 16
@@ -20,11 +23,11 @@ void HelloLCD::setup() {
 #ifdef MOCK_PINS_COUNT
   lcd.print("Testing");
 #else
-  lcd.print("Hello");
+  lcd.print("Hello library!");
 #endif
-  lcd.setCursor(0,1);
-  lcd.print("World!");
 }
 
 void HelloLCD::loop() {
+  lcd.setCursor(0,1);
+  lcd.print(millis() / 1000);
 }

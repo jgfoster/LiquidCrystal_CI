@@ -1,7 +1,6 @@
 #pragma once
 
 #include <inttypes.h>
-#include <Godmode.h>
 #include <LiquidCrystal.h>
 
 #ifndef MAX_COLS
@@ -9,6 +8,9 @@
 #endif
 #ifndef MAX_ROWS
 #define MAX_ROWS 8
+#endif
+#ifndef MOCK_PINS_COUNT
+#define MOCK_PINS_COUNT 256
 #endif
 
 class LiquidCrystal_CI : public LiquidCrystal {
