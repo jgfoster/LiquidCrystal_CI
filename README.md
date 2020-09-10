@@ -1,5 +1,7 @@
 # Arduino CI and Unit Tests for LiquidCrystal
 
+A [video](https://youtu.be/TEdCjEYrM6c) describing this library is available.
+
 ## Directory Organization
 
 The top-level of this project is organized as follows:
@@ -44,6 +46,7 @@ One approach to testing _the use of_ a library (instead of testing the library i
 
 Our current approach to testing is to use `LiquidCrystal_CI`, a subclass of `LiquidCrystal`, that intercepts and records the high-level function calls, then passes the request on to the the primary library (the superclass) for actual implementation. This means that in addition to capturing the high-level function calls, the pins are actually set and so we can let our test library run on the hardware itself (or let tests that look at the pins see the low-level actions).
 
+The initial implementation captures such actions as setting the number of rows (see `LiquidCrystal_CI::begin(uint8_t cols, uint8_t lines, uint8_t dotsize)` in [`LiquidCrysal_CI.cpp](https://github.com/jgfoster/LiquidCrystal_CI/blob/master/libraries/LiquidCrystal_CI/LiquidCrystal_CI.cpp)) and testing those value [here](https://github.com/jgfoster/LiquidCrystal_CI/blob/master/libraries/HelloLCD/test/test.cpp). 
 
 ## Credits
 
