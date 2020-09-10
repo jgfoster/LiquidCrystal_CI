@@ -1,0 +1,13 @@
+compile:
+  libraries: 
+    - LiquidCrystal
+    - LiquidCrystal_CI
+  platforms:
+    - mega2560
+
+unittest:
+  libraries: 
+    - LiquidCrystal
+    - LiquidCrystal_CI
+  platforms:
+    - mega2560
